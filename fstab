@@ -1,0 +1,35 @@
+# zroot/ROOTARCH/default
+#zroot/ROOTARCH/default	/         	zfs       	rw,nodev,xattr,posixacl	0 0
+
+# zroot/data/images
+#zroot/data/images   	/mnt/images	zfs       	rw,nodev,xattr,posixacl	0 0
+
+# zroot/data/home/root
+#zroot/data/home/root	/root     	zfs       	rw,nodev,xattr,posixacl	0 0
+
+# zroot/data/home
+#zroot/data/home     	/home     	zfs       	rw,nodev,xattr,posixacl	0 0
+
+# zroot/archvar/var/lib/docker
+#zroot/archvar/var/lib/docker	/var/lib/docker	zfs       	rw,nodev,xattr,posixacl	0 0
+
+# zroot/archvar/var/log
+#zroot/archvar/var/log	/var/log  	zfs       	rw,nodev,xattr,posixacl	0 0
+
+# zroot/archvar/var/lib/libvirt
+#zroot/archvar/var/lib/libvirt	/var/lib/libvirt	zfs       	rw,nodev,xattr,posixacl	0 0
+
+# /dev/sdb2
+UUID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX	/boot     	ext4      	rw,relatime	0 2
+
+# /dev/sdb1 LABEL=EFISYS
+UUID=XXXXXXXXX      	/efi      	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# TMPFS
+tmpfs	/tmp	tmpfs	nodev,nosuid 0 0
+
+# SWAP
+/dev/zvol/zroot/swap	none	swap	discard 0 0
+
+# Boot SystemdBoot
+/efi/env /boot none rw,defaults,errors=remount-ro,bind 0 0
